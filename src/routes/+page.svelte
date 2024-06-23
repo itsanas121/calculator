@@ -29,9 +29,11 @@
     function CE(){
         equation = equation.substring(0, equation.length-1)
     }
-
-    function minus(){
-        equation = equation
+    function division(){
+        equation = eval(equation)
+    }
+    function solve(){
+        equation = eval(equation)
     }
     let equation: string ="";
 </script>
@@ -78,7 +80,7 @@
     <button on:click={() => addToEquation('5')}>5</button>
     <button on:click={() => addToEquation('6')}>6</button>
 
-    <button on:click={() => addToEquation(' ÷ ')} class="bg-[#2384fc] text-white hover:bg-[#2384fc]/50">
+    <button on:click={() => addToEquation(' / ')} class="bg-[#2384fc] text-white hover:bg-[#2384fc]/50">
         <!-- Divison -->
         <DivisonIcon />
     </button>
@@ -96,7 +98,7 @@
     <button on:click={() => addToEquation('0')}>0
 
     </button>
-    <button>
+    <button on:click={solve}>
         <EqualsIcon />
     </button>
     <button on:click={() => addToEquation(' + ')} class="bg-[#63dc74] text-white hover:bg-[#63dc74]/50">
