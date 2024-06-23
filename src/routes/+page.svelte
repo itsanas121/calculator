@@ -40,22 +40,41 @@
     }
 }
 
-    function division(){
-        equation = eval(equation)
-    }
     function solve(){
-        equation = eval(equation)
+        try{
+            equation = eval(equation)
+        }
+        catch(error){
+            let output = document.getElementById('output');
+            output?.classList.add('bg-red-500')
+            setTimeout(() => {
+                output?.classList.remove('bg-red-500')
+            }, 1500)
+        }
     }
+    function showError() {
+  var calculator = document.getElementById('calculator');
+  calculator.classList.add('shake');
+
+  // Remove the 'shake' class after the animation completes
+  setTimeout(function() {
+    calculator.classList.remove('shake');
+  }, 500);
+}
+
+// Example usage
+showError();
     let equation: string ="";
 </script>
 
 <svelte:head>
     <title>آلة حاسبة</title>
 </svelte:head>
-<div
-    class="bg-white h-fit w-fit rounded-3xl grid grid-cols-4 gap-2 p-6 font-semibold text-xl shadow-2xl max-w-[16rem]"
+<div 
+    id = "calculator" class="bg-white h-fit w-fit rounded-3xl grid grid-cols-4 gap-2 p-6 font-semibold text-xl shadow-2xl max-w-[16rem]"
 >
     <div
+        id = "output"
         class="bg-blue-500 rounded-xl text-white col-span-4 min-h-12 flex items-center px-4 mb-2 break-all "
     >
         {equation}
@@ -112,7 +131,13 @@
     <button on:click={solve}>
         <EqualsIcon />
     </button>
-    <button on:click={() => addToEquation(' - ')} class="bg-[#63dc74] text-white hover:bg-[#63dc74]/50">
+    <button on:click={() => addToEquation(' + ')} class="bg-[#63dc74] text-white hover:bg-[#63dc74]/50">
         <AdditionIcon />
     </button>
 </div>
+<div id="calculator" class="shake">
+    <!-- Calculator content -->
+  </div>
+  <div id="calculator" class="shake">
+    <!-- Calculator content -->
+  </div>
