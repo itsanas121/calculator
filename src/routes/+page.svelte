@@ -27,8 +27,19 @@
     }
 }
     function CE(){
-        equation = equation.substring(0, equation.length-1)
+        switch(equation.substring(equation.length - 3, equation.length)){
+            case " + ":
+            case " x ":
+            case " - ":
+            case " / ":
+            equation = equation.substring(0, equation.length -3);
+            break;
+        default:
+            equation = equation.substring(0, equation.length -1);
+
     }
+}
+
     function division(){
         equation = eval(equation)
     }
@@ -42,10 +53,10 @@
     <title>آلة حاسبة</title>
 </svelte:head>
 <div
-    class="bg-white h-fit w-fit rounded-3xl grid grid-cols-4 gap-2 p-6 font-semibold text-xl shadow-2xl"
+    class="bg-white h-fit w-fit rounded-3xl grid grid-cols-4 gap-2 p-6 font-semibold text-xl shadow-2xl max-w-[16rem]"
 >
     <div
-        class="bg-blue-500 rounded-full text-white text-right col-span-4 h-12 flex items-center px-4 mb-2"
+        class="bg-blue-500 rounded-xl text-white col-span-4 min-h-12 flex items-center px-4 mb-2 break-all "
     >
         {equation}
     </div>
@@ -88,7 +99,7 @@
     <button on:click={() => addToEquation('1')}>1</button>
     <button on:click={() => addToEquation('2')}>2</button>
     <button on:click={() => addToEquation('3')}>3</button>
-    <button on:click={() => addToEquation(' x ')} class="bg-[#fcc707] text-white hover:bg-[#fcc707]/50">
+    <button on:click={() => addToEquation(' * ')} class="bg-[#fcc707] text-white hover:bg-[#fcc707]/50">
         <MultiplyIcon />
     </button>
     <button on:click={() => addToEquation('. ')}>
