@@ -112,7 +112,7 @@
     <button on:click={solve}>
         <EqualsIcon />
     </button>
-    <button on:click={() => addToEquation(' + ')} class="bg-[#63dc74] text-white hover:bg-[#63dc74]/50">
+    <button on:click={() => addToEquation(' - ')} class="bg-[#63dc74] text-white hover:bg-[#63dc74]/50">
         <AdditionIcon />
     </button>
 </div>
