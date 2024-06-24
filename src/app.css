@@ -5,27 +5,60 @@
 @tailwind utilities;
 
 button {
-    @apply bg-[#d6dcef] text-[#6d738a] hover:bg-[#d6dcef]/40 hover:scale-95 transition-all rounded-full w-12 h-12 shadow-md flex items-center justify-center;
+    @apply bg-[#d6dcef] text-[#6d738a] hover:bg-[#d6dcef]/40 hover:scale-95 transition-all rounded-full w-12 h-12 shadow-md flex items-center justify-center active:scale-90 focus:scale-90 focus:outline-none;
 }
 
 body {
     font-family: "Kanit", sans-serif;
 
 }
+
 @keyframes shake {
-    0% { transform: translateX(0); }
-    10% { transform: translateX(-10px); }
-    20% { transform: translateX(10px); }
-    30% { transform: translateX(-10px); }
-    40% { transform: translateX(10px); }
-    50% { transform: translateX(-10px); }
-    60% { transform: translateX(10px); }
-    70% { transform: translateX(-10px); }
-    80% { transform: translateX(10px); }
-    90% { transform: translateX(-10px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
     }
-    
-    .shake {
+
+    10% {
+        transform: translateX(-10px);
+    }
+
+    20% {
+        transform: translateX(10px);
+    }
+
+    30% {
+        transform: translateX(-10px);
+    }
+
+    40% {
+        transform: translateX(10px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+
+    60% {
+        transform: translateX(10px);
+    }
+
+    70% {
+        transform: translateX(-10px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    90% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake-animation {
     animation: shake 0.5s;
-    }
+}
