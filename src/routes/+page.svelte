@@ -25,6 +25,12 @@
             equation = result.toString();
         } catch (error) {}
     }
+    function calculateExponential() {
+        try {
+            const result = Math.exp(eval(equation));
+            equation = result.toString();
+        } catch (error) {}
+    }
     function CE() {
         switch (equation.substring(equation.length - 3, equation.length)) {
             case " + ":
@@ -74,6 +80,7 @@
             });
         }
     });
+
     
 </script>
 
@@ -165,9 +172,8 @@
     </button>
 
     <button id="0" on:click={() => addToEquation("0")}>0 </button>
-    <button id="=" on:click={solve}>
-        <EqualsIcon />
-    </button>
+    <button on:click={() => addToEquation("**")}>^</button>
+
     <button
         id="-"
         on:click={() => addToEquation(" - ")}
@@ -175,4 +181,9 @@
     >
         <AdditionIcon />
     </button>
+    <button class="-span-2 " id="=" on:click={solve}>
+        <EqualsIcon />
+    </button>
+    <button on:click={() => addToEquation("(")}>(</button>
+    <button on:click={() => addToEquation(")")}>)</button>    
 </div>
