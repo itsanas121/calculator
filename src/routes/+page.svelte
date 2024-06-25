@@ -76,7 +76,7 @@
         let allButtons = document.getElementsByTagName('button');
         for (let i = 0; i < allButtons.length; i++) {
             allButtons[i].addEventListener('click', () => {
-                new Audio('/click.mp3').play();
+                new Audio('./click.mp3').play();
             });
         }
     });
@@ -181,9 +181,10 @@
     >
         <AdditionIcon />
     </button>
-    <button class="-span-2 " id="=" on:click={solve}>
-        <EqualsIcon />
-    </button>
+    
     <button on:click={() => addToEquation("(")}>(</button>
     <button on:click={() => addToEquation(")")}>)</button>    
+    <button class="w-full col-span-2 " id="=" on:click={solve}>
+        <EqualsIcon />
+    </button>
 </div>
