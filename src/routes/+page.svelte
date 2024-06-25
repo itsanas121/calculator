@@ -182,9 +182,9 @@
         <AdditionIcon />
     </button>
     
-    <button on:click={() => addToEquation("(")}>(</button>
-    <button on:click={() => addToEquation(")")}>)</button>    
-    <button class="w-full col-span-2 " id="=" on:click={solve}>
+    <button id="(" on:click={() => addToEquation("(")}>(</button>
+    <button id=")" on:click={() => addToEquation(")")}>)</button>    
+    <button class="w-full col-span-2" id="=" on:click={solve}>
         <EqualsIcon />
     </button>
 </div>
